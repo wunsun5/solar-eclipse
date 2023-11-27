@@ -1,0 +1,76 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* background-color: rgb(195, 221, 228); */
+    animation: sky 60s linear infinite;
+}
+
+.sun{
+    position: relative;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.sun::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(60px);
+    border-radius: 50%;
+    background: radial-gradient(circle 3em at 50% 50%, white 1%, yellow 100%);
+    width: 10em;
+    height: 10em;
+    animation: bersinar 5s linear infinite;
+}
+
+.moon{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    left: calc(50% - 30em);
+    animation: revolusiBulan 60s linear infinite;
+}
+
+@keyframes bersinar{
+    0%{
+        filter: blur(60px);
+    }
+    50%{
+        filter: blur(40px);
+    }
+    100%{
+        filter: blur(60px);
+    }
+}
+
+@keyframes sky{
+    0%{
+        background-color:  rgb(87, 104, 108);
+    }
+    50%{
+        background-color: black;
+    }
+    100%{
+        background-color:  rgb(87, 104, 108);
+    }
+}
+
+@keyframes revolusiBulan{
+    0%{
+        left: calc(50% - 30em);
+    }
+    51%{
+        left: calc(50% - 5em);
+    }
+    100%{
+        left: calc(50% + 30em - 10em);
+    }
+}
